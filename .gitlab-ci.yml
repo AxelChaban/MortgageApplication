@@ -18,17 +18,19 @@
 
 
 stages:
-  - Dependencies
+  - compil
 Push DBB:
-  stage: Dependencies
+  stage: compil
   script:
-  - |
-    echo "Push DBB project to USS"
+  - echo "Push DBB project to USS"
+  - $DBB_HOME/bin/groovyz -DBB_PERSONAL_DAEMON -Djava.library.path=/var/dbb/dbb-ztoolkit-1.1.3/lib:/usr/lib/java_runtime64 /u/ibmuser/dbb-zappbuild-2-x/build.groovy --workspace /u/ibmuser/builds/${CI_RUNNER_SHORT_TOKEN}/${CI_CONCURRENT_ID}/${CI_PROJECT_NAMESPACE} --application ${CI_PROJECT_NAME} --workDir /u/ibmuser/build/logs/BUILD-${CI_PIPELINE_ID} --hlq IBMUSER --url https://10.7.1.43:9443/dbb/ --id IBMUSER --pw sys1 --verbose --fullBuild
   tags:
     - zos-ssh
-  only :
-    variables:
-      - $CI_PIPELINE_SOURCE == 'pipeline'
+  variables:
+     $CI_PIPELINE_SOURCE :
+       value : "pipeline"
+     CI_DEBUG_TRACE: 
+       value : "true"
       
 workflow:
   rules:
