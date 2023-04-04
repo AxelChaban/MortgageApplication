@@ -16,13 +16,13 @@
 # This specific template is located at:
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
 
-workflow:
-  rules:
-    - changes: 
-      - README.md
-      - .vscode/*
-      when: never
-    - when: always
+#workflow:
+#  rules:
+#    - changes: 
+#      - README.md
+#      - .vscode/*
+#      when: never
+#    - when: always
     
 stages:
   - compil
