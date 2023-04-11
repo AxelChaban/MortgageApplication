@@ -25,7 +25,15 @@
 #    - when: always
     
 stages:
+  - echo
   - compil
+echo DBB:
+  stage: echo
+  tags:
+    - zos-ssh
+  script:
+  - echo "echoAxel"
+
 Push DBB:
   stage: compil
   tags:
