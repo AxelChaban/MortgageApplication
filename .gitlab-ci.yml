@@ -38,9 +38,9 @@ Push DBB:
   stage: compil
   tags:
     - zos-ssh
-  variables:
-     $CI_PIPELINE_SOURCE :
-       value : "pipeline"
+  #variables:
+     #$CI_PIPELINE_SOURCE :
+       #value : "pipeline"
      #CI_DEBUG_TRACE: 
        #value : "true"
   script:
