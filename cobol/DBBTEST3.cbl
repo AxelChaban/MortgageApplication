@@ -1,7 +1,7 @@
   ******************************************************************
        IDENTIFICATION DIVISION.
       *AUTHOR. Axel CHABAN.
-       PROGRAM-ID. DBBTEST.
+       PROGRAM-ID. DBBTEST3.
        ENVIRONMENT DIVISION.
        CONFIGURATION SECTION.
        SOURCE-COMPUTER. MAINFRAME.
@@ -16,8 +16,9 @@
       *****************************************************************
        FILE SECTION.
        WORKING-STORAGE SECTION.
-********       01 CUSTOMER-COPY.
-********          COPY EPSMTCOM.
+       01 CUSTOMER-COPY.
+          COPY EPSMTCOM.
+  *****COPY BNK1DDM.
        PROCEDURE DIVISION.
-                DISPLAY 'AXELTESTDBB2_GITLAB01'.
+                DISPLAY 'AXELDBBTEST3_GITLAB01'.
                 STOP RUN.
